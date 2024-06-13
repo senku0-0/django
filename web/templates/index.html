@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/mid_values.css">
+    <link rel="stylesheet" href="/static/css/greeting.css">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div id="first_page">
+        <div class="college_Name">
+            <img class="college_logo" src="/static/logo/AbedaLogo.gif" alt="Error loading...">
+            <p class="Name">ABEDA INAMDAR SENIOR COLLEGE OF ARTS, SCIENCE AND COMMERCE<br><span
+                    class="autono">(AUTONOMOUS)</span> </p>
+        </div>
+        <div class="greet">
+            <div>
+                <p class="greeting">Hello, Students!!!</p>
+                <p class="welcoming_greet">Welcome to Examination System.</p>
+            </div>
+        </div>
+
+        <form method="post" action="/dashboard">
+            <div class="login_container">
+                <div class="login_entry">
+                    <label for="login" class="login_details">Login By...</label>
+                    <select class="options" name="tpyes" id="type">
+                        <option value="select">Select Login Option</option>
+                        <option value="username">Username</option>
+                        <option value="college_email">College Email</option>
+                        <option value="mobile_no">Mobile No.</option>
+                    </select>
+                    <input class="entry_value" type="text" name=userinfo placeholder="Enter here">
+                    <p class="pass">Password</p>
+                    <input class="entry_value" type="password" placeholder="Password">
+                    <p class="login_details">Degree</p>
+                    <select class="options" name="tpye" id="type">
+                        <option value="select">Select Degree</option>
+                        <option value="sc">BSC </option>
+                        <option value="cs">BSC Computer Scienece</option>
+                        <option value="bca">BCA</option>
+                        <option value="bcom">BCom</option>
+                    </select>
+                    <input class="login_submit" type="submit" value="Login">
+                    <div class="register">
+                        <p style="text-align: center; font-size: large;margin-top: 5px; font-weight: bold; padding-top: 5px;">OR</p>
+                        <a class="register_link" href="register/">Register</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
