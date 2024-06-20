@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from .models import Login_Register_db
 # from django.http import HttpResponse
 # Create your views here.
 # from .form import calculator #userform
@@ -41,22 +42,42 @@ def regis(request):
     data={}
     if a:
         data={
-            'fname':request.POST.get("first"),
-            'mname':request.POST.get("mid"),
-            'lname':request.POST.get("last"),
-            'date':request.POST.get("date"),
-            'roll_no':request.POST.get("roll"),
-            'phone_no':request.POST.get("phone"),
-            'college_email':request.POST.get("College_email"),
-            'personal_email':request.POST.get("Personal_email"),
-            'pass':request.POST.get("password"),
-            'cpass':request.POST.get("cpassword"),
-            'value':a
+            'Password':request.POST['password'],
+            'Confrimed_Password':request.POST['cpassword']
         }
-        url=(f"/?value:{a}")
-        return redirect(url)
-    
-    return render(request,'reg.html',data)
+        if data['Password']==data['Confrimed_Password']:
+            data_info=Login_Register_db.objects.create(
+            First_name=request.POST['first'],
+            Middle_name=request.POST['mid'],
+            Last_name=request.POST['last'],
+            Date_Of_Brith=request.POST['date'],
+            Roll_No=request.POST['roll'],
+            Phone_No=request.POST['phone'],
+            CEmail_ID=request.POST['College_email'],
+            PEmail_ID=request.POST['Personal_email'],
+            Password=request.POST['password'],
+            Confrimed_Password=request.POST['cpassword'],
+            )
+            data_info.save()
+            return redirect("/")
+        else:
+
+            return render(request,'reg.html',{'Error':True})
+        
+        # data={
+        #     'fname':request.POST.get("first"),
+        #     'mname':request.POST.get("mid"),
+        #     'lname':request.POST.get("last"),
+        #     'date':request.POST.get("date"),
+        #     'roll_no':request.POST.get("roll"),
+        #     'phone_no':request.POST.get("phone"),
+        #     'college_email':request.POST.get("College_email"),
+        #     'personal_email':request.POST.get("Personal_email"),
+        #     'pass':request.POST.get("password"),
+        #     'cpass':request.POST.get("cpassword"),
+        #     'value':a
+        # }
+    return render(request,'reg.html')
     
 # def about(request):
 #     return HttpResponse("hi this is about us page") 

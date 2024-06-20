@@ -15,11 +15,14 @@
                 <img class="college_animated_pic" src="/static/logo/college.jpg" alt="Error loading...">
 
             </div>
-            <div class="righ">
+            <div class="right">
                 <!-- <p>Hello, Student</p> -->
                 <form method="POST">
                 {% csrf_token %}
                     <p class="sign_up">Sign Up</p>
+                    {% if Error %}
+                    <p style=" display: flex;justify-content: center; background: #dd9494;height: 25px;margin: 0px;align-items: center;">Error:Both Password should be the same</p>
+                    {% endif %}
                     <div>
                         <div>
                             <label class="font_desgin" for="name">Name</label>

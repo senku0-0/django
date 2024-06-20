@@ -30,6 +30,16 @@ body{
     height: 450px;
     border-radius: 20px;
 }
+
+.err{
+    display: flex;
+    justify-content: center;
+    background: #dd9494;
+    height: 25px;
+    margin: 0px;
+    align-items: center;
+}
+
 .sign_up{
     font-family: 'Courier New', Courier, monospace;
     font-size: 40px;
