@@ -1,0 +1,151 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signin-form h2 {
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.signin-form p {
+    margin-bottom: 20px;
+    color: #666666;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.email-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.email-btn:hover {
+    background-color: #333333;
+}
+
+.divider {
+    margin: 20px 0;
+    color: #999999;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: #ddd;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.terms {
+    margin-top: 15px;
+    color: #999999;
+    font-size: 12px;
+}
+
+.terms a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .input-group input,
+    .email-btn,
+    .google-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .google-btn img {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
+    
+    .terms {
+        font-size: 10px;
+    }
+}
+
